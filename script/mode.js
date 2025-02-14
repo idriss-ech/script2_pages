@@ -1,7 +1,6 @@
 const modeIcon = document.querySelectorAll('.modeIcon');
-const modeCont = document.getElementById('modeCont');
+const modeCont = document.querySelectorAll('.modeCont');
 
-// Récupérer le thème sauvegardé ou utiliser 'light' par défaut
 let currentMode = localStorage.getItem('theme') || 'light';
 
 // Appliquer le thème au chargement de la page
@@ -16,12 +15,12 @@ const applyTheme = (theme) => {
   });
 };
 
-// Appliquer le thème initial
 applyTheme(currentMode);
 
 // Basculer entre les modes
-modeCont.addEventListener('click', () => {
+modeCont.forEach(item=> item.addEventListener('click', () => {
+    console.log('click')
   currentMode = currentMode === 'light' ? 'dark' : 'light';
   localStorage.setItem('theme', currentMode);
   applyTheme(currentMode);
-});
+}));

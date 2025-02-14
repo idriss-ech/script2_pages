@@ -4,12 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
-    <script src="https://kit.fontawesome.com/a9ec473b0b.js" crossorigin="anonymous"></script>
+    <link rel="preload" href="../style/output.css">
+
+    <link rel="stylesheet" href="../style/output.css">
+    <script src="https://kit.fontawesome.com/a9ec473b0b.js" crossorigin="anonymous" defer></script>
     <title>Page1</title>
 </head>
 
 <body>
+
+
     <header class="py-20 bg-violet-900 text-white flex flex-col gap-16 justify-center items-center text-left">
         <div class="md:w-[770px]">
             <h1 class="text-2xl md:text-[58px] font-bold">How To Protect Computer.<br>
@@ -30,44 +34,58 @@
                 </div>
             </div>
         </div>
+
+        <div class="absolute top-10 right-10 flex">
+            <div class="modeCont" class="ml-5 cursor-pointer">
+                <i class="fa-solid modeIcon text-xl text-white"></i>
+            </div>
+            <div class="ml-5 cursor-pointer text-white">
+                <a href="../ar/index1-ar.html">AR</a>
+             </div>
+        </div>
     </header>
-    <section class="py-15 px-10 md:w-[770px] mx-auto">
-        <div>
-            <h2 class="font-bold text-xl text-violet-950">Branding</h2>
-            <p class="py-5 font-light text-sm text-justify text-gray-400">This sounded nonsense to Alice, so she said nothing, but set off at once toward the Red Queen. To her
-                surprise, she lost sight of her in a moment, and found herself walking in at the front-door again.</p>
-            <p class="py-5 font-light text-sm text-justify text-gray-400">For some minutes Alice stood without speaking, looking out in all directions over the country - and a
-                most curious country it was. There were a number of tiny little brooks running straight across it from
-                side to side, and the ground between was divided up into squares by a number of little.</p>
-        </div>
-        <div class="my-4">
-            <h3  class="font-normal text-lg text-violet-950">Perfect for Your</h3>
-            <p class="py-5 font-light text-sm text-justify text-gray-400">She gave my mother such a turn, that I have always been convinced I am indebted to Miss Betsey for having
-                been born on a Friday. The word was appropriate to the moment.</p>
-            <figure>
-                <img src="https://s3-alpha-sig.figma.com/img/6d1e/9a7a/6c8fe80620f8105ac4cf2ebc078e1dcd?Expires=1740355200&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=k-TuP-70qhB5YqjhUNiLQdU8Wnh1gFt2Qa8B8b9w0hw7f0dxZbMqOjO1nglhIiRz9cp~bgP44Fhv-uPrTNuI~w7V4HNcTpvOKLxRyf0MzNvqW42bgai9yPtgy~5EP0ZUALluqvG76S2qlVnTR4Uc083Q58m43bieJ5IBLi3ybLGf8nWvRQEUxn-EyHyDUc78Fg5hM73rEOVd-d6UT~vlqX-sk3N1peOpWuzXcuJJjaUCaHPKJwaEDRj4ompw3DIICpe9jLKRxI27mrwfrogAxFaZvO~W4UGwtFcVyePzULx3ba5-yMcFUuU8QrlfBwrOP5c6jT1w6fGiMkxZMpPidQ__"
-                class="h-90 w-full object-cover rounded-lg"
-                alt="woman">
-                <figcaption class="uppercase text-gray-400 my-2">
-                    There have not been any since
-                </figcaption>
-            </figure>
-        </div>
-        <div>
-            <h3  class="font-normal text-lg text-violet-950">The Fall Report</h3>
-            <p class="py-5 font-light text-sm text-justify text-gray-400">This sounded nonsense to Alice, so she said nothing, but set off at once toward the Red Queen. To her surprise, she lost sight of her in a moment, and found herself walking in at the front-door again.</p>
-            <div class="flex pl-3 my-4">
-                <i class="fa-regular fa-circle-dot p-2 text-violet-950"></i>
-                <p class="font-sm text-medium text-justify text-violet-950">This sounded nonsense to Alice, so she said nothing, but set off at once toward the Red Queen. To her surprise, she lost sight of her in a moment, and found herself walking in at the front-door again.</p>
+    
+    <main class="dark:bg-gray-900">
+        <section class="py-15 px-10 md:w-[770px] mx-auto">
+            <div>
+                <h2 class="font-bold text-xl text-violet-950 dark:text-violet-200">Branding</h2>
+                <p class="py-5 font-light text-sm text-justify text-gray-400">This sounded nonsense to Alice, so she said nothing, but set off at once toward the Red Queen. To her
+                    surprise, she lost sight of her in a moment, and found herself walking in at the front-door again.</p>
+                <p class="py-5 font-light text-sm text-justify text-gray-400">For some minutes Alice stood without speaking, looking out in all directions over the country - and a
+                    most curious country it was. There were a number of tiny little brooks running straight across it from
+                    side to side, and the ground between was divided up into squares by a number of little.</p>
             </div>
-            <div class="flex pl-3 my-3">
-                <i class="fa-regular fa-circle-dot p-2 text-violet-950"></i>
-                <p class="font-sm text-medium text-justify text-violet-950">So saying he unbuckled his baldric with the bugle, took a feather from his cap, and gave them to Wamba.</p>
+            <div class="my-4">
+                <h3  class="font-normal text-lg text-violet-950 dark:text-violet-200">Perfect for Your</h3>
+                <p class="py-5 font-light text-sm text-justify text-gray-400">She gave my mother such a turn, that I have always been convinced I am indebted to Miss Betsey for having
+                    been born on a Friday. The word was appropriate to the moment.</p>
+                <figure>
+                    <img src="https://s3-alpha-sig.figma.com/img/6d1e/9a7a/6c8fe80620f8105ac4cf2ebc078e1dcd?Expires=1740355200&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=k-TuP-70qhB5YqjhUNiLQdU8Wnh1gFt2Qa8B8b9w0hw7f0dxZbMqOjO1nglhIiRz9cp~bgP44Fhv-uPrTNuI~w7V4HNcTpvOKLxRyf0MzNvqW42bgai9yPtgy~5EP0ZUALluqvG76S2qlVnTR4Uc083Q58m43bieJ5IBLi3ybLGf8nWvRQEUxn-EyHyDUc78Fg5hM73rEOVd-d6UT~vlqX-sk3N1peOpWuzXcuJJjaUCaHPKJwaEDRj4ompw3DIICpe9jLKRxI27mrwfrogAxFaZvO~W4UGwtFcVyePzULx3ba5-yMcFUuU8QrlfBwrOP5c6jT1w6fGiMkxZMpPidQ__"
+                    class="h-90 w-full object-cover rounded-lg"
+                    alt="woman">
+                    <figcaption class="uppercase text-gray-400 my-2">
+                        There have not been any since
+                    </figcaption>
+                </figure>
             </div>
-            <p  class="py-5 font-light text-sm text-justify text-gray-400">She gave my mother such a turn, that I have always been convinced I am indebted to Miss Betsey for having been born on a Friday. The word was appropriate to the moment.</p>
-        </div>
-    </section>
+            <div>
+                <h3  class="font-normal text-lg text-violet-950 dark:text-violet-200">The Fall Report</h3>
+                <p class="py-5 font-light text-sm text-justify text-gray-400">This sounded nonsense to Alice, so she said nothing, but set off at once toward the Red Queen. To her surprise, she lost sight of her in a moment, and found herself walking in at the front-door again.</p>
+                <div class="flex pl-3 my-4">
+                    <i class="fa-regular fa-circle-dot p-2 text-violet-950 dark:text-violet-200"></i>
+                    <p class="font-sm text-medium text-justify text-violet-950 dark:text-violet-200">This sounded nonsense to Alice, so she said nothing, but set off at once toward the Red Queen. To her surprise, she lost sight of her in a moment, and found herself walking in at the front-door again.</p>
+                </div>
+                <div class="flex pl-3 my-3">
+                    <i class="fa-regular fa-circle-dot p-2 text-violet-950 dark:text-violet-200"></i>
+                    <p class="font-sm text-medium text-justify text-violet-950 dark:text-violet-200">So saying he unbuckled his baldric with the bugle, took a feather from his cap, and gave them to Wamba.</p>
+                </div>
+                <p  class="py-5 font-light text-sm text-justify text-gray-400">She gave my mother such a turn, that I have always been convinced I am indebted to Miss Betsey for having been born on a Friday. The word was appropriate to the moment.</p>
+            </div>
+        </section>
+    </main>
+   
   
+    <script src="../script/mode.js" defer></script>
 </body>
 
 </html>

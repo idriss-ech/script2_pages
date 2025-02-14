@@ -73,15 +73,19 @@
           <p class="dark:text-white">Established</p>
           <i class="fa-solid fa-caret-down text-blue-800 dark:text-yellow-300"></i>
         </div>
-        <div class="flex items-center gap-3 pl-6">
-          <i class="fa-solid fa-magnifying-glass text-blue-800 dark:text-yellow-300"></i>
+
+        <div class="flex gap-4 justify-between ml-8">
+          <div class="flex items-center gap-3 pl-6">
+            <i class="fa-solid fa-magnifying-glass text-blue-800 dark:text-yellow-300"></i>
+          </div>
+          <div class="modeCont" class="ml-5 cursor-pointer">
+            <i class="fa-solid modeIcon text-xl text-blue-800 dark:text-yellow-300"></i>
+          </div>
+          <div class="cursor-pointer text-blue-800 dark:text-yellow-300">
+            <a href="./ar/index-ar.html">AR</a>
+          </div>
         </div>
-        <div id="modeCont" class="ml-5 cursor-pointer">
-          <i class="fa-solid modeIcon text-xl text-blue-800 dark:text-yellow-300"></i>
-        </div>
-        <div class="ml-5 cursor-pointer text-blue-800 dark:text-yellow-300">
-          <a href="./ar/index-ar.html">AR</a>
-        </div>
+        
       </div>
     </section>
 
@@ -114,8 +118,8 @@
         </li>
       </ul>
 
-      <div class="lg:hidden flex text-4xl text-blue-800">
-        <i class="fa-solid fa-bars cursor-pointer" onclick="openSidebar()"></i>
+      <div class="lg:hidden flex text-4xl text-blue-800 dark:text-yellow-500">
+        <i class="fa-solid fa-bars cursor-pointer" id="openSidbarBtn"></i>
       </div>
     </section>
 
@@ -123,7 +127,7 @@
     <aside id="sidebar"
       class="fixed transition duration-300 bg-gray-200 dark:bg-gray-800 dark:text-white z-10 w-[300px] top-0 -right-[300px] h-screen">
       <i class="fa-solid hover:animate-spin fa-xmark absolute top-4 left-4 text-2xl cursor-pointer"
-        onclick="closeSidebar()"></i>
+         id="closeSidbarBtn"></i>
       <ul class="flex flex-col mt-20 mx-4 text-center gap-5">
         <li
           class="text-gray-900 dark:text-white px-3 py-2 text-sm uppercase hover:bg-blue-800 hover:text-white transition delay-150 duration-300 ease-in-out">
@@ -165,6 +169,10 @@
         </div>
         <div class="flex items-center gap-3">
           <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+        
+        <div class="modeCont" class="ml-5 cursor-pointer">
+          <i class="fa-solid modeIcon text-xl text-blue-800 dark:text-yellow-300"></i>
         </div>
       </div>
     </aside>
@@ -381,13 +389,15 @@
       <div class="whitespace-nowrap overflow-x-hidden" id="listItem"></div>
       <div class="flex justify-center items-center py-8">
         <div
-          class="w-10 h-10 text-blue cursor-pointer font-bold bg-white outline-0-900 flex justify-center ite-0           onclick="
+          class="w-10 h-10 text-blue cursor-pointer font-bold bg-white dark:bg-yellow-500 outline-0-900 flex justify-center items-center"          
+          onclick="
           pagLeft()">
           <span><i class="fa-solid fa-chevron-left"></i></span>
         </div>
         <div id="paginationItem" class="flex"></div>
         <div
-          class="w-10 h-10 text-bleu cursor-pointer font-bold bg-white outline-0-900 flex justify-center ite-0           onclick="
+          class="w-10 h-10 text-blue cursor-pointer font-bold bg-white dark:bg-yellow-500 outline-0-900 flex justify-center items-center"         
+          onclick="
           pagRight()">
           <span><i class="fa-solid fa-chevron-right"></i></span>
         </div>
@@ -668,12 +678,12 @@
     </div>
   </footer>
 
-  <script src="./script/sidebar.js"></script>
-  <script src="./script/mode.js"></script>
-  <script src="./script/pagination.js"></script>
-  <script src="./script/validation.js"></script>
-  <script src="./script/createCards.js"></script>
-  <script src="./script/carrousel.js"></script>
+  <script defer src="./script/sidebar.js"></script>
+  <script defer src="./script/mode.js"></script>
+  <script defer src="./script/pagination.js"></script>
+  <script defer src="./script/validation.js"></script>
+  <script defer src="./script/createCards.js"></script>
+  <script defer src="./script/carrousel.js"></script>
 </body>
 
 </html>
