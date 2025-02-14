@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- dnsprefetch : resoude en avance les noms de demaine -->
+    <link rel="dns-prefetch" href="https://www.youtube.com" />
+    <link rel="dns-prefetch" href="https://kit.fontawesome.com" />
+    <link rel="dns-prefetch" href="https://images.unsplash.com" />
+    <!-- Preconnect : etablir une connexion anticipe-->
+    <link rel="preconnect" href="https://www.youtube.com" />
+    <link rel="preconnect" href="https://kit.fontawesome.com" />
+    <link rel="preconnect" href="https://images.unsplash.com" />
+
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.png">
+
+    <!-- Preload : chargement des ressource -->
+    <link rel="preload" href="https://kit.fontawesome.com/a9ec473b0b.js" as="script" />
+
+    <link rel="preload" href="../style/output.css">
+    <link rel="preload" href="../script/sidebar.js">
+    <link rel="preload" href="../script/validation.js">
+    <link rel="preload" href="../script/pagination.js">
+    <link rel="preload" href="../script/mode.js">
+    <link rel="preload" href="../script/createCards.js">
+    <link rel="preload" href="../script/carrousel.js">
+
+    <link href="../style/output.css" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/a9ec473b0b.js" crossorigin="anonymous" defer></script>
+    <style>
+        ::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+    <title>السباق 2 - إدريس </title>
+</head>
+
+<body>
+    <!-- Header -->
+
+    <header class="dark:bg-gray-800 ">
+        <!-- Contact Bar -->
+        <section
+            class="flex justify-center items-center lg:justify-between px-0 lg:px-[72px] py-[12px] border-b-2 border-gray-300 dark:border-yellow-100">
+            <div class="flex gap-4 text-blue-800 dark:text-yellow-300">
+                <i
+                    class="fa-brands fa-twitter text-xl transition duration-300 ease-in-out hover:-translate-y-1 cursor-pointer"></i>
+                <i
+                    class="fa-brands fa-facebook text-xl transition duration-300 ease-in-out hover:-translate-y-1 cursor-pointer"></i>
+                <i
+                    class="fa-brands fa-linkedin text-xl transition duration-300 ease-in-out hover:-translate-y-1 cursor-pointer"></i>
+                <i
+                    class="fa-brands fa-instagram text-xl transition duration-300 ease-in-out hover:-translate-y-1 cursor-pointer"></i>
+                <i
+                    class="fa-brands fa-youtube  text-xl transition duration-300 ease-in-out hover:-translate-y-1 cursor-pointer"></i>
+            </div>
+            <div class="lg:flex hidden">
+                <div class="flex items-center gap-3 border-l-3 px-6 border-gray-400">
+                    <i class="fa-solid fa-phone text-md text-blue-800 dark:text-yellow-300"></i>
+                    <p class="dark:text-white">(123) 456-7890</p>
+                </div>
+                <div class="flex items-center gap-3 border-l-3 px-6 border-gray-400">
+                    <i class="fa-regular fa-envelope text-md text-blue-800 dark:text-yellow-300"></i>
+                    <p class="dark:text-white">info@loremipsum.com</p>
+                </div>
+                <div class="flex items-center gap-3 border-l-3 px-6 border-gray-400">
+                    <i class="fa-solid fa-globe text-md text-blue-800 dark:text-yellow-300"></i>
+                    <p class="dark:text-white">تم تأسيسه</p>
+                    <i class="fa-solid fa-caret-down text-blue-800 dark:text-yellow-300"></i>
+                </div>
+                <div class="flex items-center gap-3 pr-6">
+                    <i class="fa-solid fa-magnifying-glass text-blue-800 dark:text-yellow-300"></i>
+                </div>
+                <div id="modeCont" class="ml-5 pr-6 cursor-pointer">
+                    <i class="fa-solid modeIcon text-xl text-blue-800 dark:text-yellow-300"></i>
+                </div>
+                <div class="ml-5 cursor-pointer text-blue-800 dark:text-yellow-300">
+                    <a href="../index.html">EN</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- NavBar -->
+        <section class="flex justify-between items-center px-4 lg:px-[72px]" dir="rtl">
+            <div>
+                <img src="https://s3-alpha-sig.figma.com/img/49d4/79e7/1f3b3b06a84e3891871bee72c93a6446?Expires=1740355200&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=t4c93k3rRc42n8tsPuQVYWa~762gNUVvTjHPJEec5y8vJl~AshJj8UU8Rnfwm3NsK02OHkdsgQnNKCoJEAvwSkVZk1QASePIk2IyTPb3NbxIuLEDC49yAdOsL4TUhja-KfkDfAmMjmVGL-Lfi64WskL-ciIkCRn6wG4uBCrwFGyCA5qAwEjGoKk6g27mbehQvd43lPVhvZ2~rrbA~UHZmiJpLUvlWx0nKn1orEsDhf6hhb-8S28XxDx18UJMakCCo9mHe8Rg16SRjx-rB1VI1fio9BjFjfvfuxO3dU7O9GiWk23rWKsZhBw-qPWyUMdVwc-Qc6omjMcEco4xC2RqQg__"
+                    class="w-[150px] h-[100px] object-cover text-left" alt="" />
+            </div>
+
+            <ul class="lg:flex hidden gap-5">
+                <li class="text-gray-600 dark:text-white px-3 py-2 text-sm uppercase">
+                    <a href="#">العديد</a>
+                </li>
+                <li class="text-gray-600 dark:text-white px-3 py-2 text-sm uppercase">
+                    <a href="#">النصوص هي</a>
+                </li>
+                <li class="text-gray-600 dark:text-white px-3 py-2 text-sm uppercase">
+                    <a href="#">نصوص وهمية ببساطة</a>
+                </li>
+                <li class="text-gray-600 dark:text-white px-3 py-2 text-sm uppercase">
+                    <a href="#">نص الطباعة</a>
+                </li>
+                <li class="text-gray-600 dark:text-white px-3 py-2 text-sm uppercase">
+                    <a href="#">الطباعة الحديثة</a>
+                </li>
+                <li class="text-white bg-blue-800 dark:bg-yellow-400 text-sm px-3 py-2 uppercase">
+                    <a href="#">الغالبية لديهم</a>
+                </li>
+            </ul>
+
+            <div class="lg:hidden flex text-4xl text-blue-800">
+                <i class="fa-solid fa-bars cursor-pointer" onclick="openSidebar()"></i>
+            </div>
+        </section>
+
+        <!-- Sidebar -->
+        <aside id="sidebar"
+            class="fixed transition duration-300 bg-gray-200 dark:bg-gray-800 dark:text-white z-10 w-[300px] top-0 -right-[300px] h-screen">
+            <i class="fa-solid hover:animate-spin fa-xmark absolute top-4 left-4 text-2xl cursor-pointer"
+                onclick="closeSidebar()"></i>
+            <ul class="flex flex-col mt-20 mx-4 text-center gap-5">
+                <li
+                    class="text-gray-900 dark:text-white px-3 py-2 text-sm uppercase hover:bg-blue-800 hover:text-white transition delay-150 duration-300 ease-in-out">
+                    <a href="#">العديد</a>
+                </li>
+                <li
+                    class="text-gray-900 dark:text-white px-3 py-2 text-sm uppercase hover:bg-blue-800 hover:text-white transition delay-150 duration-300 ease-in-out">
+                    <a href="#">النصوص هي</a>
+                </li>
+                <li
+                    class="text-gray-900 dark:text-white px-3 py-2 text-sm uppercase hover:bg-blue-800 hover:text-white transition delay-150 duration-300 ease-in-out">
+                    <a href="#">نصوص وهمية ببساطة</a>
+                </li>
+                <li
+                    class="text-gray-900 dark:text-white px-3 py-2 text-sm uppercase hover:bg-blue-800 hover:text-white transition delay-150 duration-300 ease-in-out">
+                    <a href="#">نص الطباعة</a>
+                </li>
+                <li
+                    class="text-gray-900 dark:text-white px-3 py-2 text-sm uppercase hover:bg-blue-800 hover:text-white transition delay-150 duration-300 ease-in-out">
+                    <a href="#">الطباعة الحديثة</a>
+                </li>
+                <li class="text-white bg-blue-800 text-sm px-3 py-2 uppercase">
+                    <a href="#">الغالبية لديهم</a>
+                </li>
+            </ul>
+            <div class="flex flex-col justify-center items-center gap-7 mt-3">
+                <div class="flex flex-col items-center gap-3 px-6">
+                    <i class="fa-solid fa-phone text-blue-800 text-md"></i>
+                    <p>(123) 456-7890</p>
+                </div>
+                <div class="flex flex-col items-center gap-3 px-6">
+                    <i class="fa-regular fa-envelope text-blue-800 text-md"></i>
+                    <p>info@loremipsum.com</p>
+                </div>
+                <div class="flex flex-col items-center gap-3 px-6">
+                    <i class="fa-solid fa-globe text-blue-800 text-md"></i>
+                    <p>تم تأسيسه</p>
+                    <i class="fa-solid fa-caret-down text-blue-800"></i>
+                </div>
+                <div class="flex items-center gap-3">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+            </div>
+        </aside>
+    </header>
+
+
+    <!-- Body -->
+
+    <main class="dark:bg-gray-900">
+        <!-- Hero Section -->
+        <section class="h-[1000px] relative text-center dark:bg-gray-900">
+            <div
+                class="h-[688px] bg-blue-900 dark:bg-gray-900 font-bold text-center py-10 flex justify-start items-center flex-col">
+                <div>
+                    <h1 class="text-4xl font-bold lg:text-4xl text-white pb-3">
+                        مرحبًا بكم في <strong class="text-red-500 dark:text-yellow-500">العلامة التجارية</strong> <br>
+                        حيث يلتقي الأسلوب مع الأناقة
+                    </h1>
+                    <p class="text-md lg:text-lg text-white font-normal leading-6 lg:leading-9 px-4 lg:px-50 lg:pt-10">
+                        نؤمن أن الموضة هي أكثر من مجرد ملابس — إنها تعبير عن الفردية والإبداع والثقة. مجموعاتنا المختارة
+                        مصممة لتمكين كل شخص من عرض أسلوبه الفريد، سواء كنت ترتدي ملابس ليوم عادي أو لحدث مسائي أنيق.
+                    </p>
+                </div>
+            </div>
+
+            <div
+                class="h-[550px] w-[400px] lg:w-[900px] xl:w-[1300px] flex flex-col justify-center gap-4 items-center absolute bottom-10 left-1/2 transform -translate-x-1/2 bg-gray-200 dark:bg-gray-800">
+                <a href="./pages/index1.html"
+                    class="block px-8 py-4 w-3/4 rounded transition duration-300 cursor-pointer hover:translate-y-2 text-white font-bold text-2xl bg-blue-800 dark:bg-yellow-600">الصفحة
+                    1</a>
+                <a href="./pages/index2.html"
+                    class="block px-8 py-4 w-3/4 rounded transition duration-300 cursor-pointer hover:translate-y-2 text-white font-bold text-2xl bg-blue-800 dark:bg-yellow-600">الصفحة
+                    2</a>
+                <a href="./pages/index3.html"
+                    class="block px-8 py-4 w-3/4 rounded transition duration-300 cursor-pointer hover:translate-y-2 text-white font-bold text-2xl bg-blue-800 dark:bg-yellow-600">الصفحة
+                    3</a>
+            </div>
+        </section>
+
+        <section
+            class="px-10 pt-10 lg:px-[72px] mt-20 grid grid-cols-6 gap-x-4 gap-y-8 text-gray-950 dark:text-white dark:bg-gray-800"
+            dir="rtl">
+            <div class="text-center lg:text-right col-span-6 lg:col-span-2 col-start-1 col-end-7">
+                <h2 class="text-4xl font-semibold">
+                    لوريم إيبسوم ببساطة <br>
+                    نص وهمي
+                </h2>
+                <p class="font-semibold text-lg mt-3">
+                    لوريم إيبسوم هو نص وهمي لصناعة الطباعة والترتيب.
+                </p>
+                <div class="flex flex-col my-7 gap-4">
+                    <div class="flex flex-col lg:flex-row gap-4">
+                        <i class="fa-solid fa-phone text-blue-800 dark:text-yellow-500 text-xl"></i>
+                        <p class="font-light text-sm text-gray-600 dark:text-yellow-200">
+                            لوريم: (123) 456-7890 <br>
+                            إيبسوم: (123) 456-7890
+                        </p>
+                    </div>
+                    <div class="flex gap-4 flex-col lg:flex-row">
+                        <i class="fa-regular fa-envelope text-blue-800 dark:text-yellow-500 text-xl"></i>
+                        <p class="font-light text-sm text-gray-600 dark:text-yellow-200">
+                            info@loremipsum.com
+                        </p>
+                    </div>
+                    <div class="flex gap-4 flex-col lg:flex-row">
+                        <i class="fa-solid fa-location-dot text-blue-800 dark:text-yellow-500 text-xl"></i>
+                        <p class="font-light text-sm text-gray-600 dark:text-yellow-200">
+                            لوريم إيبسوم هو ببساطة <br>
+                            نص وهمي للطباعة
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <form id="form1" class="col-span-6 col-start-1 col-end-7 lg:col-span-3 lg:col-start-7 lg:col-end-3">
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="flex flex-col gap-3" id="firstnameContainer">
+                        <label for="firstname" class="font-light">الاسم الأول</label>
+                        <input id="firstname" type="text"
+                            class="h-[55px] px-3 bg-gray-100 dark:bg-gray-500 dark:text-white placeholder:font-light placeholder:text-gray-500"
+                            placeholder="أحياناً" required>
+                        <p class="font-light text-sm"></p>
+                    </div>
+                    <div class="flex flex-col gap-3" id="secondnameContainer">
+                        <label for="lastname" class="font-light">اسم العائلة</label>
+                        <input id="lastname" type="text"
+                            class="h-[55px] px-3 bg-gray-100 dark:bg-gray-500 dark:text-white placeholder:font-light placeholder:text-gray-500"
+                            placeholder="أحياناً" required>
+                        <p class="font-light text-sm"></p>
+                    </div>
+
+                    <div class="flex flex-col gap-3" id="emailContainer">
+                        <label for="email" class="font-light">البريد الإلكتروني</label>
+                        <input id="email" type="text"
+                            class="h-[55px] px-3 bg-gray-100  dark:bg-gray-500 dark:text-white placeholder:font-light placeholder:text-gray-500"
+                            placeholder="أحياناً" required>
+                        <p class="font-light text-sm"></p>
+                    </div>
+                    <div class="flex flex-col gap-3" id="passwordContainer">
+                        <label for="password" class="font-light">كلمة المرور</label>
+                        <input id="password" type="text"
+                            class="h-[55px] px-3 bg-gray-100 dark:bg-gray-500 dark:text-white placeholder:font-light placeholder:text-gray-500"
+                            placeholder="أحياناً" required>
+                        <p class="font-light text-sm"></p>
+                    </div>
+                </div>
+                <div class="col-start-1 col-end-7 mt-3 gap-3 flex flex-col" id="descriptionContainer">
+                    <label for="description" class="font-light capitalize">الوصف</label>
+                    <textarea id="description"
+                        class="w-full h-[180px] resize-none px-3 bg-gray-100 dark:bg-gray-500 dark:text-white font-light text-gray-500">
+                </textarea>
+                    <p class="font-light text-sm"></p>
+                </div>
+                <div class="text-center">
+                    <button
+                        class="font-light my-8 cursor-pointer uppercase px-10 py-2 text-white bg-blue-900 dark:bg-yellow-500"
+                        id="submitBtn">
+                        لوريم إيبسوم
+                    </button>
+                </div>
+            </form>
+        </section>
+
+        <section class="px-10 lg:px-[72px] py-20 bg-[#F6F3EE] dark:bg-gray-900 text-center" dir="rtl">
+            <p class="font-light text-3xl dark:text-yellow-600">لوريم إيبسوم</p>
+            <h2 class="font-bold text-blue-900 dark:text-yellow-200 text-3xl py-4">
+              لوريم إيبسوم ببساطة
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 py-12">
+              <div class="flex flex-col gap-4 justify-center items-center text-center p-4">
+                <div class="w-[80px] h-[80px] bg-gray-400 animate-pulse"></div>
+                <h2 class="text-blue-900 dark:text-yellow-200 font-semibold">
+                  لوريم إيبسوم ببساطة
+                </h2>
+                <p class="font-sm text-sm font-light text-gray-400">
+                  لوريم إيبسوم هو نص وهمي في صناعة الطباعة وتنسيق النصوص. لقد كان
+                  لوريم إيبسوم هو المعيار في هذه الصناعة.
+                </p>
+              </div>
+              <div class="flex flex-col gap-4 justify-center items-center text-center p-4">
+                <div class="w-[80px] h-[80px] bg-gray-400 animate-pulse"></div>
+                <h2 class="text-blue-900 dark:text-yellow-200 font-semibold">
+                  لوريم إيبسوم ببساطة
+                </h2>
+                <p class="font-sm text-sm font-light text-gray-400">
+                  لوريم إيبسوم هو نص وهمي في صناعة الطباعة وتنسيق النصوص. لقد كان
+                  لوريم إيبسوم هو المعيار في هذه الصناعة.
+                </p>
+              </div>
+              <div class="flex flex-col gap-4 justify-center items-center text-center p-4">
+                <div class="w-[80px] h-[80px] bg-gray-400 animate-pulse"></div>
+                <h2 class="text-blue-900 dark:text-yellow-200 font-semibold">
+                  لوريم إيبسوم ببساطة
+                </h2>
+                <p class="font-sm text-sm font-light text-gray-400">
+                  لوريم إيبسوم هو نص وهمي في صناعة الطباعة وتنسيق النصوص. لقد كان
+                  لوريم إيبسوم هو المعيار في هذه الصناعة.
+                </p>
+              </div>
+              <div class="flex flex-col gap-4 justify-center items-center text-center p-4">
+                <div class="w-[80px] h-[80px] bg-gray-400 animate-pulse"></div>
+                <h2 class="text-blue-900 dark:text-yellow-200 font-semibold">
+                  لوريم إيبسوم ببساطة
+                </h2>
+                <p class="font-sm text-sm font-light text-gray-400">
+                  لوريم إيبسوم هو نص وهمي في صناعة الطباعة وتنسيق النصوص. لقد كان
+                  لوريم إيبسوم هو المعيار في هذه الصناعة.
+                </p>
+              </div>
+              <div class="flex flex-col gap-4 justify-center items-center text-center p-4">
+                <div class="w-[80px] h-[80px] bg-gray-400 animate-pulse"></div>
+                <h2 class="text-blue-900 dark:text-yellow-200 font-semibold">
+                  لوريم إيبسوم ببساطة
+                </h2>
+                <p class="font-sm text-sm font-light text-gray-400">
+                  لوريم إيبسوم هو نص وهمي في صناعة الطباعة وتنسيق النصوص. لقد كان
+                  لوريم إيبسوم هو المعيار في هذه الصناعة.
+                </p>
+              </div>
+              <div class="flex flex-col gap-4 justify-center items-center text-center p-4">
+                <div class="w-[80px] h-[80px] bg-gray-400 animate-pulse"></div>
+                <h2 class="text-blue-900 dark:text-yellow-200 font-semibold">
+                  لوريم إيبسوم ببساطة
+                </h2>
+                <p class="font-sm text-sm font-light text-gray-400">
+                  لوريم إيبسوم هو نص وهمي في صناعة الطباعة وتنسيق النصوص. لقد كان
+                  لوريم إيبسوم هو المعيار في هذه الصناعة.
+                </p>
+              </div>
+            </div>
+          </section>
+          
+
+        <section class="px-10 lg:px-[72px] py-20" dir="rtl">
+            <h2 class="text-3xl font-bold text-center dark:text-yellow-500">لوريم إيبسوم ببساطة</h2>
+            <br>
+            <div class="flex flex-col lg:flex-row justify-between text-white items-center">
+                <select
+                    class="border-2 px-2 h-[61px] rounded-lg dark:text-white border-gray-300 dark:border-yellow-500 w-full text-black"
+                    id="inputFilter"></select>
+                <div class="flex">
+                    <button
+                        class="font-light my-8 mx-1 cursor-pointer rounded-lg uppercase h-[61px] px-10 py-2 text-white bg-blue-900 dark:bg-yellow-600"
+                        onclick="applyFilter();">
+                        تطبيق
+                    </button>
+                    <button
+                        class="font-light my-8 mx-1 cursor-pointer rounded-lg uppercase h-[61px] px-10 py-2 text-blue-800 dark:text-yellow-600 bg-transparent border-2 border-blue-800 dark:border-yellow-600"
+                        onclick="reset()">
+                        إعادة تعيين
+                    </button>
+                </div>
+            </div>
+
+            <div class="whitespace-nowrap overflow-x-hidden" id="listItem"></div>
+            <div class="flex justify-center items-center py-8">
+                <div class="w-10 h-10 text-blue cursor-pointer font-bold bg-white dark:bg-yellow-500 outline-0-900 flex justify-center items-center"
+                    onclick="pagRight()">
+                    <span><i class="fa-solid fa-chevron-right"></i></span>
+                </div>
+                <div id="paginationItem" class="flex"></div>
+                <div class="w-10 h-10 text-blue cursor-pointer font-bold bg-white dark:bg-yellow-500 outline-0-900 flex justify-center items-center"
+                    onclick="pagLeft()">
+                    <span><i class="fa-solid fa-chevron-left"></i></span>
+                </div>
+                
+            </div>
+        </section>
+
+
+
+        <section class="px-10 lg:px-[72px] py-10 text-center bg-[#F6F3FF] dark:bg-gray-900 ">
+            <h2 class="font-bold text-3xl my-3 dark:text-yellow-500">إضافة بطاقات</h2>
+            <br>
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+                <input type="text" id="cardTitle"
+                    class="bg-white outline-0 dark:bg-gray-700 dark:border-0 border-1 border-violet-300 rounded px-2 py-3"
+                    placeholder="العنوان">
+                <input type="text" id="cardDescription"
+                    class="bg-white outline-0 dark:bg-gray-700 dark:border-0 border-1 border-violet-300 rounded px-2 py-3"
+                    placeholder="الوصف">
+                <button id="addCardsBtn"
+                    class="bg-violet-300 dark:bg-yellow-600  p-3 rounded-lg cursor-pointer hover:bg-violet-200  font-bold text-violet-900 dark:text-yellow-100">
+                    إضافة
+                </button>
+            </div>
+            <p id="cardMsg"></p>
+            <div id="cardsContainer" class="p-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div class="rounded-lg p-4 flex flex-col justify-center items-center gap-3 bg-red-200">
+                    <h3 class="font-bold text-2xl text-blue-500">
+                        لوريم إيبسوم هو ببساطة نص وهمي
+                    </h3>
+                    <p class="font-light text-gray-800 text-center">
+                        لوريم إيبسوم هو نص وهمي يستخدم في صناعة الطباعة والنشر. لوريم؟ لوريم إيبسوم هو ببساطة
+                    </p>
+                    <button class="text-white font-normal px-10 py-2 cursor-pointer rounded-lg bg-blue-500">
+                        اكتشف
+                    </button>
+                </div>
+                <div class="rounded-lg p-4 flex flex-col justify-center items-center gap-3 bg-yellow-200">
+                    <h3 class="font-bold text-2xl text-yellow-500">
+                        لوريم إيبسوم هو ببساطة نص وهمي
+                    </h3>
+                    <p class="font-light text-gray-800 text-center">
+                        لوريم إيبسوم هو نص وهمي يستخدم في صناعة الطباعة والنشر. لوريم؟ لوريم إيبسوم هو ببساطة
+                    </p>
+                    <button class="text-white font-normal px-10 py-2 cursor-pointer rounded-lg bg-yellow-500">
+                        اكتشف
+                    </button>
+                </div>
+                <div class="rounded-lg p-4 flex flex-col justify-center items-center gap-3 bg-green-200">
+                    <h3 class="font-bold text-2xl text-green-500">
+                        لوريم إيبسوم هو ببساطة نص وهمي
+                    </h3>
+                    <p class="font-light text-gray-800 text-center">
+                        لوريم إيبسوم هو نص وهمي يستخدم في صناعة الطباعة والنشر. لوريم؟ لوريم إيبسوم هو ببساطة
+                    </p>
+                    <button class="text-white font-normal px-10 py-2 cursor-pointer rounded-lg bg-green-500">
+                        اكتشف
+                    </button>
+                </div>
+            </div>
+            <div class="flex flex-col justify-center items-center">
+                <button id="loadMore"
+                    class="bg-red-300 p-3 rounded-lg cursor-pointer hover:bg-red-200 font-bold text-red-900">
+                    تحميل المزيد
+                </button>
+                <button id="loadLess"
+                    class="bg-yellow-300 p-3 rounded-lg cursor-pointer hover:bg-yellow-200 font-bold text-yellow-900">
+                    تحميل أقل
+                </button>
+            </div>
+        </section>
+
+
+        <!-- Media -->
+
+        <!-- Tutorial -->
+        <section class="bg-[#F6F3EE] dark:bg-gray-900 px-10 lg:px-[72px] py-20" dir="rtl">
+            <h2 class="font-extrabold text-3xl text-center mb-5 dark:text-yellow-500">الدروس التعليمية</h2>
+            <p class="text-center text-gray-700 dark:text-white">
+                تهدف هذه الدروس إلى تقديم المعرفة والمهارات الأساسية للمبتدئين والمتعلمين المتقدمين. سواء كنت تتطلع
+                لتعلم مهارات جديدة أو تحسين مهاراتك الحالية، ستجد هنا موارد قيمة لمساعدتك في رحلتك التعليمية.
+            </p>
+            <br>
+            <div class="flex flex-row flex-wrap justify-center items-center gap-3">
+                <iframe class="rounded-xl border-0" width="400" height="300"
+                    src="https://www.youtube.com/embed/DHjqpvDnNGE?si=Q9II7EDgOur316BA" title="مشغل فيديو يوتيوب"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+                <iframe class="rounded-xl border-0" width="400" height="300"
+                    src="https://www.youtube.com/embed/DC471a9qrU4?si=u97U-bcfG_Lawj1T" title="مشغل فيديو يوتيوب"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+                <iframe class="rounded-xl border-0" width="400" height="300"
+                    src="https://www.youtube.com/embed/g2o22C3CRfU?si=9q1zE0N9eJsQ3YxZ" title="مشغل فيديو يوتيوب"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+                <iframe class="rounded-xl border-0" width="400" height="300"
+                    src="https://www.youtube.com/embed/tVCYa_bnITg?si=UrCI-Rrj0pnZeM3O" title="مشغل فيديو يوتيوب"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+            </div>
+        </section>
+
+
+        <!-- Images -->
+        <section class="bg-[#F6F3AA  dark:bg-gray-900 px-10 lg:px-[72px] py-20 flex flex-col items-center">
+            <h2 class="font-extrabold text-4xl text-center mb-5 dark:text-yellow-500">كاروسيل الصور</h2>
+            <p class="text-center text-gray-700 dark:text-white">
+                يعرض هذا الكاروسيل مجموعة من الصور بطريقة تفاعلية. يمكنك التمرير عبر الصور بسهولة للاستمتاع بها أو
+                لاستكشاف المزيد من التفاصيل.
+            </p>
+            <br>
+
+            <div class="flex gap-3 carrouselContainer overflow-x-scroll w-full py-6">
+                <div class="w-full flex gap-3">
+                    <img src="https://images.unsplash.com/photo-1739183646664-952f213eba02?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxNXx8fGVufDB8fHx8fA%3D%3D"
+                        class="w-[300px] h-[400px] rounded-lg transition duration-300 hover:sepia-50 cursor-pointer"
+                        alt="الصورة1" loading="lazy" />
+
+                    <img src="https://images.unsplash.com/photo-1739325755246-0000aca42302?q=80&w=1890&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        class="w-[300px] h-[400px] rounded-lg transition duration-300 hover:sepia-50 cursor-pointer"
+                        alt="الصورة2" loading="lazy" />
+
+                    <img src="https://images.unsplash.com/photo-1739287700815-7eef4abaab4d?q=80&w=2492&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        class="w-[300px] h-[400px] rounded-lg transition duration-300 hover:sepia-50 cursor-pointer"
+                        alt="الصورة3" loading="lazy" />
+
+                    <img src="https://images.unsplash.com/photo-1739183646664-952f213eba02?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxNXx8fGVufDB8fHx8fA%3D%3D"
+                        class="w-[300px] h-[400px] rounded-lg transition duration-300 hover:sepia-50 cursor-pointer"
+                        alt="الصورة4" loading="lazy" />
+
+                    <img src="https://images.unsplash.com/photo-1739325755246-0000aca42302?q=80&w=1890&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        class="w-[300px] h-[400px] rounded-lg transition duration-300 hover:sepia-50 cursor-pointer"
+                        alt="الصورة5" loading="lazy" />
+
+                    <img src="https://images.unsplash.com/photo-1739287700815-7eef4abaab4d?q=80&w=2492&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        class="w-[300px] h-[400px] rounded-lg transition duration-300 hover:sepia-50 cursor-pointer"
+                        alt="الصورة6" loading="lazy" />
+                </div>
+            </div>
+            <br>
+
+            <div class="flex justify-center gap-3 items-center cursor-pointer dark:text-yellow-500">
+                <i class="fa-solid fa-chevron-left text-2xl font-bold" id="carrouselLeft"></i>
+                <i class="fa-solid fa-chevron-right text-2xl font-bold" id="carrouselRight"></i>
+            </div>
+        </section>
+
+
+        <section class="bg-[#F6F3EE] dark:bg-gray-900 px-10 lg:px-[72px] py-20" dir="rtl">
+            <div class="text-center">
+                <h2 class="text-4xl font-bold text-center dark:text-yellow-500">
+                    النص الشائع هو ببساطة <br>
+                    نص الطباعة
+                </h2>
+                <p class="font-sm text-sm font-medium text-gray-800 my-4 dark:text-white">
+                    النص الشائع هو ببساطة نص وهمي في صناعة الطباعة وتنسيق النصوص. هل ترغب في معرفة المزيد؟
+                </p>
+            </div>
+
+            <form class="col-span-3 col-start-7 col-end-3 py-10 dark:text-white">
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="flex flex-col gap-3">
+                        <label for="input1" class="font-light">النص الشائع</label>
+                        <input id="input1" type="text"
+                            class="h-[55px] px-3 bg-white outline-0 dark:bg-gray-700 dark:border-0 placeholder:font-light placeholder:text-gray-500"
+                            placeholder="أحياناً">
+                    </div>
+                    <div class="flex flex-col gap-3">
+                        <label for="input2" class="font-light">الذي لا يوجد</label>
+                        <input id="input2" type="text"
+                            class="h-[55px] px-3 bg-white outline-0 dark:bg-gray-700 dark:border-0 placeholder:font-light placeholder:text-gray-500"
+                            placeholder="أحياناً">
+                    </div>
+                    <div class="flex flex-col gap-3">
+                        <label for="input3" class="font-light">المواقع</label>
+                        <input id="input3" type="text"
+                            class="h-[55px] px-3 bg-white outline-0 dark:bg-gray-700 dark:border-0 placeholder:font-light placeholder:text-gray-500"
+                            placeholder="أحياناً">
+                    </div>
+                    <div class="flex flex-col gap-3">
+                        <label for="input4" class="font-light">الكلمات</label>
+                        <input id="input4" type="text"
+                            class="h-[55px] px-3 bg-white outline-0 dark:bg-gray-700 dark:border-0 placeholder:font-light placeholder:text-gray-500"
+                            placeholder="أحياناً">
+                    </div>
+                </div>
+                <div class="col-start-1 col-end-7 mt-3 gap-3 flex flex-col">
+                    <label for="input5" class="font-light capitalize">الفكاهة</label>
+                    <textarea id="input5"
+                        class="w-full h-[180px] resize-none px-3 bg-white outline-0 dark:bg-gray-700 dark:border-0 placeholder:font-light placeholder:text-gray-500">
+                </textarea>
+                </div>
+                <div class="text-center">
+                    <button class="font-light my-8 uppercase px-10 py-2 text-white bg-blue-900 dark:bg-yellow-600">
+                        إعدادات النص الشائع
+                    </button>
+                </div>
+            </form>
+        </section>
+
+
+    </main>
+
+    <!-- Footer -->
+
+    <footer class="dark:bg-gray-800">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 items-start justify-center px-6 lg:px-[32px] pt-10">
+            <div class="flex flex-col gap-4 items-center lg:items-end text-left">
+                <img
+                    src="https://s3-alpha-sig.figma.com/img/49d4/79e7/1f3b3b06a84e3891871bee72c93a6446?Expires=1740355200&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=t4c93k3rRc42n8tsPuQVYWa~762gNUVvTjHPJEec5y8vJl~AshJj8UU8Rnfwm3NsK02OHkdsgQnNKCoJEAvwSkVZk1QASePIk2IyTPb3NbxIuLEDC49yAdOsL4TUhja-KfkDfAmMjmVGL-Lfi64WskL-ciIkCRn6wG4uBCrwFGyCA5qAwEjGoKk6g27mbehQvd43lPVhvZ2~rrbA~UHZmiJpLUvlWx0nKn1orEsDhf6hhb-8S28XxDx18UJMakCCo9mHe8Rg16SRjx-rB1VI1fio9BjFjfvfuxO3dU7O9GiWk23rWKsZhBw-qPWyUMdVwc-Qc6omjMcEco4xC2RqQg__"
+                    class="w-[150px] h-[100px] object-cover " alt="" />
+                <p class="dark:text-gray-100">
+                    لوريم إيبسوم هو نص وهمي يستخدم في صناعة الطباعة وإعداد النصوص. لوريم إيبسوم كان المعيار الصناعي للنص الوهمي.
+                </p>
+                <div class="flex gap-4 text-blue-800 dark:text-yellow-600">
+                    <i class="fa-brands fa-twitter text-xl"></i>
+                    <i class="fa-brands fa-facebook text-xl"></i>
+                    <i class="fa-brands fa-linkedin text-xl"></i>
+                    <i class="fa-brands fa-instagram text-xl"></i>
+                    <i class="fa-brands fa-youtube text-xl"></i>
+                </div>
+            </div>
+    
+            <div class="text-center lg:text-right">
+                <h2 class="font-bold text-2xl text-black dark:text-yellow-100 mb-5">الطباعة A</h2>
+                <ul class="flex flex-col gap-3 font-light text-gray-700 dark:text-gray-100">
+                    <li>لوريم</li>
+                    <li>إيبسوم</li>
+                    <li>نص وهمي</li>
+                    <li>الطباعة</li>
+                    <li>إعداد النصوص</li>
+                </ul>
+            </div>
+    
+            <div class="text-center lg:text-right">
+                <h2 class="font-bold text-2xl text-black dark:text-yellow-100 mb-5">الأغلبية</h2>
+                <ul class="flex flex-col gap-3 font-light text-gray-700 dark:text-gray-100">
+                    <li>لوريم</li>
+                    <li>إيبسوم</li>
+                    <li>نص وهمي</li>
+                </ul>
+            </div>
+    
+            <div class="text-center lg:text-right">
+                <h2 class="font-bold text-2xl text-black dark:text-yellow-100 mb-5">مولد</h2>
+                <div class="flex flex-col my-7 gap-4">
+                    <div class="flex gap-4 justify-center flex-col lg:flex-row lg:justify-start">
+                        <i class="fa-solid fa-phone text-blue-800 dark:text-yellow-600 text-xl"></i>
+                        <p class="font-light text-sm text-gray-600 dark:text-gray-100">
+                            لوريم: (123) 456-7890 <br>
+                            إيبسوم: (123) 456-7890
+                        </p>
+                    </div>
+                    <div class="flex gap-4 justify-center flex-col lg:flex-row lg:justify-start">
+                        <i class="fa-regular fa-envelope text-blue-800 dark:text-yellow-600 text-xl"></i>
+                        <p class="font-light text-sm text-gray-600 dark:text-gray-100">
+                            info@loremipsum.com
+                        </p>
+                    </div>
+                    <div class="flex gap-4 justify-center flex-col lg:flex-row lg:justify-start">
+                        <i class="fa-solid fa-location-dot text-blue-800 dark:text-yellow-600 text-xl"></i>
+                        <p class="font-light text-sm text-gray-600 dark:text-gray-100">
+                            لوريم إيبسوم هو نص وهمي <br>
+                            يستخدم في الطباعة
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="border-t-2 border-gray-400 mx-[72px]">
+            <p class="font-light text-gray-700 dark:text-gray-100 py-8 text-center">
+                لوريم إيبسوم هو نص وهمي يستخدم في صناعة الطباعة
+            </p>
+        </div>
+    </footer>
+    
+
+
+    <script src="../script/sidebar.js"></script>
+    <script src="../script/mode.js"></script>
+    <script src="../script/pagination.js"></script>
+    <script src="../script/validation.js"></script>
+    <script src="../script/createCards.js"></script>
+    <script src="../script/carrousel.js"></script>
+</body>
+
+</html>

@@ -14,7 +14,6 @@ const cardBgs = ['violet', 'red', 'orange', 'blue', 'green'];
 let lastbg = 'red';
 let cardIds = [];
 let maxItems = 3;
-
 addCardsBtn.addEventListener('click', () => {
     let title = cardTitle.value;
     let description = cardDescription.value;
@@ -37,9 +36,10 @@ function createCard(title, description) {
     while (bg === lastbg) {
         bg = cardBgs[Math.floor(Math.random() * cardBgs.length)];
     }
+    console.log(bg)
     cardCounter++;
     let div = document.createElement('div');
-    div.className = 'rounded-lg p-4 flex flex-col justify-center items-center gap-3 ' + `bg-${bg}-200`;
+    div.classList.add('rounded-lg', 'p-4', 'flex', 'flex-col', 'justify-center', 'items-center', 'gap-3',`bg-${bg}-200`);
     div.id = `card${cardCounter}`;
 
     let h3 = document.createElement('h3');

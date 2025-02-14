@@ -1,24 +1,27 @@
-const modeIcon = document.querySelectorAll('.modeIcon')
-const modeCont = document.getElementById('modeCont')
+const modeIcon = document.querySelectorAll('.modeIcon');
+const modeCont = document.getElementById('modeCont');
 
-let currentMode = 'light';
-localStorage.setItem('theme', currentMode)
-modeIcon.forEach(item => item.classList.add('fa-moon'))
+// Récupérer le thème sauvegardé ou utiliser 'light' par défaut
+let currentMode = localStorage.getItem('theme') || 'light';
 
+// Appliquer le thème au chargement de la page
+const applyTheme = (theme) => {
+  // Ajouter ou mettre à jour l'attribut data-theme
+  document.documentElement.setAttribute('data-theme', theme);
+
+  // Mettre à jour les icônes
+  modeIcon.forEach(item => {
+    item.classList.toggle('fa-moon', theme === 'light');
+    item.classList.toggle('fa-sun', theme === 'dark');
+  });
+};
+
+// Appliquer le thème initial
+applyTheme(currentMode);
+
+// Basculer entre les modes
 modeCont.addEventListener('click', () => {
-    currentMode == 'light' ? currentMode = 'dark' : currentMode = 'light'
-    document.documentElement.classList.toggle('dark')
-    localStorage.setItem('theme', currentMode)
-
-    if (currentMode == 'light') {
-        modeIcon.forEach(item => item.classList.remove('fa-sun'))
-        modeIcon.forEach(item => item.classList.add('fa-moon'))
-
-    }
-    else {
-        modeIcon.forEach(item => item.classList.remove('fa-moon'))
-        modeIcon.forEach(item => item.classList.add('fa-sun'))
-
-    }
-})
-
+  currentMode = currentMode === 'light' ? 'dark' : 'light';
+  localStorage.setItem('theme', currentMode);
+  applyTheme(currentMode);
+});

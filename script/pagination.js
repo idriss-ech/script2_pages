@@ -38,22 +38,22 @@ function createItems(data){
     let index = 1;
     data.forEach(item => {
         const element = document.createElement('div');
-        element.className = 'inline-block w-full transition duration-300 delay-150 ease-in-out rounded-lg border-2 border-gray-300 px-7 py-4 mx-auto';
+        element.className = 'inline-block w-full transition duration-300 delay-150 ease-in-out rounded-lg border-2 border-gray-500 dark:border-yellow-300 px-7 py-4 mx-auto';
         element.id = `listItem${index}` 
 
         const title = document.createElement('h2');
         title.innerText = item.title;
-        title.className = 'font-bold text-2xl'
+        title.className = 'font-bold text-2xl  text-blue-800 dark:text-yellow-500 '
         element.appendChild(title);
 
         const category = document.createElement('p');
         category.innerText = item.category;
-        title.className = 'font-light text-sm text-blue-800'
+        category.className = 'font-light text-sm text-blue-800 dark:text-yellow-300 '
         element.appendChild(category);
 
         const description = document.createElement('p');
         description.innerText = item.description;
-        description.className = 'text-left text-sm font-light text-gray-500'
+        description.className = 'text-left text-sm font-light text-gray-500 dark:text-white'
         element.appendChild(description);
 
         container.appendChild(element);
@@ -64,25 +64,6 @@ function createItems(data){
 createItems(data);
 
 
-// get the list item ids
-// const listItem = document.getElementById('listItem').children;
-// const items = Object.values(listItem)
-// let list = []; 
-
-// items.forEach((item)=>{
-//     list.push(item.getAttribute('id'));
-// })
-
-
-// filtersArray = []; 
-// list.forEach((item)=>{
-//     let row = {
-//         id : item,
-//         category : document.getElementById(item).querySelector('p').innerHTML
-//     }
-//     filtersArray.push(row)
-// })
-// console.log(filtersArray)
 
 
 const paginationContainer = document.getElementById('paginationItem');
