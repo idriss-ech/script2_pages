@@ -3,31 +3,31 @@ const data = [
         id: 1,
         title: "Introduction to Programming",
         category: "Education",
-        description: "A beginner's guide to programming concepts and techniques."
+        description: "A beginner's guide "
     },
     {
         id: 2,
         title: "The Great Outdoors",
         category: "Adventure",
-        description: "Exploring the beauty and challenges of outdoor activities."
+        description: "Exploring the beauty "
     },
     {
         id: 3,
         title: "Healthy Eating",
         category: "Adventure",
-        description: "Tips and recipes for maintaining a healthy and balanced diet."
+        description: "Tips and recipes for maintaining "
     },
     {
         id: 4,
         title: "Tech Innovations",
         category: "Technology",
-        description: "Latest advancements and trends in the tech industry."
+        description: "Latest advancements and"
     },
     {
         id: 5,
         title: "World History",
         category: "History",
-        description: "An overview of significant events and eras in world history."
+        description: "An overview of significant"
     }
 ];
 
@@ -38,23 +38,23 @@ function createItems(data){
     let index = 1;
     data.forEach(item => {
         const element = document.createElement('div');
-        element.className = 'inline-block w-full transition duration-300 delay-150 ease-in-out rounded-lg border-2 border-gray-500 dark:border-yellow-300 px-7 py-4 mx-auto';
-        element.id = `listItem${index}` 
+element.className = 'inline-block w-full transition duration-300 delay-150 ease-in-out rounded-lg border-2 border-gray-500 dark:border-yellow-300 px-7 py-4 mx-auto';
+element.id = `listItem${index}`;
 
-        const title = document.createElement('h2');
-        title.innerText = item.title;
-        title.className = 'font-bold text-2xl  text-blue-800 dark:text-yellow-500 '
-        element.appendChild(title);
+const title = document.createElement('h2');
+title.textContent = item.title;  // Utiliser textContent ici est plus performant que innerText
+title.className = 'font-bold text-lg md:text-2xl text-blue-800 dark:text-yellow-500';
+element.appendChild(title);
 
-        const category = document.createElement('p');
-        category.innerText = item.category;
-        category.className = 'font-light text-sm text-blue-800 dark:text-yellow-300 '
-        element.appendChild(category);
+const category = document.createElement('p');
+category.textContent = item.category;  // Utiliser textContent ici aussi
+category.className = 'font-light text-sm text-blue-800 dark:text-yellow-300';
+element.appendChild(category);
 
-        const description = document.createElement('p');
-        description.innerText = item.description;
-        description.className = 'text-left text-sm font-light text-gray-500 dark:text-white'
-        element.appendChild(description);
+const description = document.createElement('p');
+description.textContent = item.description;  // Utiliser textContent pour du texte brut
+description.className = 'text-left break-words text-sm font-light text-gray-500 dark:text-white';  // Utiliser 'break-words' plutôt que 'break-all' pour un comportement plus naturel
+element.appendChild(description);
 
         container.appendChild(element);
         index++;
